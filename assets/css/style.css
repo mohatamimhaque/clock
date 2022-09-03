@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+
+  }
+  :root{
+    --white: #fff;
+    --blue-100: rgb(210, 227, 252);
+    --blue-300: rgb(138, 180, 248);
+    --blue-600: rgb(26, 115, 232);
+    --blue-700: rgb(25, 103, 210);
+    --gray-100: rgb(241, 243, 244);
+    --gray-300: rgb(218, 220, 224);
+    --gray-400: rgb(154, 160, 166);
+    --gray-500: rgb(248, 249, 250);
+    --gray-600: rgb(128, 134, 139);
+    --gray-700: rgb(95, 99, 104);
+    --gray-800: rgb(60, 64, 67);
+    --gray-900: rgb(32, 33, 36);
+    --green-500: #30e60b;
+    --green-600: #12bc00;
+    --green-700: #058b00;
+    --green-800: #006504;
+    --green-900: #003706;
+    --orange-500: #ff9400;
+    --red-400: #ff4f5e;
+    --red-500: #ff0039;
+    --red-600: #d70022;
+    --red-700: #a4000f;
+    --red-800: #5a0002;
+    --red-900: #3e0200;
+    --yellow-500: #ffe900;
+    --yellow-600: #d7b600;
+    --yellow-60-a30: rgba(215, 182, 0, 0.3);
+    --yellow-700: #a47f00;
+    --yellow-800: #715100;
+    --yellow-900: #3e2800;
+    --link-color: rgb(47, 129, 252);
+    --theme-bg-color: rgba(255,255,255,0.25);
+    --border-color: rgba(113 119 144 / 25%);
+    --theme-color: var(--gray-800);
+    --inactive-color: rgb(113 119 144 / 78%);
+    --body-font: "Poppins", sans-serif;
+    --hover-menu-bg: rgba(12 15 25 / 30%);
+    --content-title-color: #999ba5;
+    --content-bg: rgb(146 151 179 / 13%);
+    --button-inactive: rgb(249 250 251 / 55%);
+    --dropdown-bg: #21242d;
+    --dropdown-hover: rgb(42 46 60);
+    --popup-bg: rgb(22 25 37);
+    --search-bg: #14162b;
+    --overlay-bg: rgba(36, 39, 59, 0.3);
+    --scrollbar-bg: rgb(1 2 3 / 40%);
+}
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+  border-radius: 10px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color:#e6e6fa;
+    
+}
+
+
+.aps-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 350px;
+    border-radius:50%;
+}
+#bg-gradient{
+    position: absolute;
+    width:92%;
+    height:92%;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg,#fff0f5,#f8f8ff,#e0ffff,#f0fff0,#e6e6fa );
+}
+#wrapper{
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width:100%;
+    border-radius: 50%;
+    box-shadow:0 25px 25px rgba(0,0,0,0.1);
+    border:1px solid rgba(255,255,255,0.25);
+    border-right:1px solid rgba(255,255,255,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    font-size: 15px;
+    font-weight: 500;
+    padding:20px;
+    overflow-x: hidden;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+ .aps-wrapper{
+      width:90%
+  }
+}
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+  height:6px
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+  border-radius: 10px;
+}
+
+
+#wrapper::before{
+    content:'';
+    position: absolute;
+    width: 8px;
+    height:8px;
+    background-color: #2f363e;
+    border-radius: 50%;
+    z-index:16
+}
+#wrapper span{
+    position: absolute;
+    inset: 8px;
+    color: #00025f;
+     text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+}
+#wrapper span b{
+  font-size: 1.3em;
+    opacity: 0.25px;
+    font-weight: 600;
+    display: inline-block;
+    color: #000131;
+    text-align: center;
+    transform: rotate(calc(-30deg * var(--i)));
+    font-family: 'Signika Negative', sans-serif;
+}
+
+#wrapper .circle{
+    position: absolute;
+    width:270px;
+    height:270px;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+    z-index: 10;
+}
+#wrapper .circle2{
+    width:240px;
+    height:240px;
+    z-index:9
+}
+#wrapper .circle3{
+    width:200px;
+    height:200px;
+    z-index:8
+}
+
+#wrapper .circle i{
+  position:absolute;
+  width:2px;
+  height:50%;
+  background-color: var(--clr);
+  opacity: 0.70;
+  transform-origin: bottom;
+  transform: scaleY(0.5);
+  border-radius: 5px;
+
+top:-3px}
+#wrapper .circle2 i{
+  width:3px
+}
+#wrapper .circle3 i{
+  width:4px;
+}
+
+.circle::before{
+  content: '';
+  position:absolute;
+  top:8.5px;
+  width:8px;
+  height:8px;
+  border-radius: 50%;
+  background-color: var(--clr);
+  box-shadow: 0 0 2px var(--clr),
+  0 0 5px var(--clr);
+}
+
+.digital-clock{
+  position: absolute;
+  bottom:90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index:20;
+}
+.digital-clock .time{
+  display:flex;
+  padding:4px;
+  font-size: 2em;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}
+
+.digital-clock .time div{
+  position: relative;
+  width:48px;
+  color: var(--clr);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.digital-clock .time div:nth-child(1)::after,
+.digital-clock .time div:nth-child(2)::after{
+  content:':';
+  position: absolute;
+  top:2px;
+  right:-5px;
+  font-size: 0.8em;
+
+  animation: animate 1s steps(1) infinite;
+}
+.digital-clock .time div:last-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5em;
+  width:auto;
+  text-transform: uppercase;
+  color: #06060f;
+}
+
+.digital-clock .time div:nth-child(2)::after{
+}
+@keyframes animate{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity:0
+  }
+}
+.date{
+  display: flex;
+  width:100px;
+}
+.date div{
+  position: relative;
+ margin:0 3px;
+ font-size: 1em;
+ font-weight: 600;
+ color:#2806be
+}
+.date div:first-child{
+  margin-right: 8px;
+  color:#df1223
+}
+.date div:first-child::after{
+  content: ',';
+  position: absolute;
+  bottom:2px;
+}
